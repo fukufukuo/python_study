@@ -1,3 +1,5 @@
+#【前ファイル】なし
+#【後ファイル】df_to_graph.py
 # shokki_stock.csvをndarrayとして読み込むまでを自力でやってみる
 
 import numpy as np
