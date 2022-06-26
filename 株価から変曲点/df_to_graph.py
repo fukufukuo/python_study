@@ -29,3 +29,13 @@ plt.show()
 #前日比と貸借倍率の列のみグラフ化されている・・なぜ？
 #他の列はすべてセルの表示形式が通貨になっている。全部標準にしないといけない。
 #やることが増えてきているので、いったんここでこのファイルは終わり。まずcsvの整形をする
+
+#2022-06-26 csvファイルの桁区切り文字を無視して読み込むことに成功。
+#これでグラフがどうなるか検証する。
+data = pd.read_csv("C:\Python_study\株価から変曲点\shokki_stock_data.csv", thousands=',')
+data.plot()
+plt.show()
+
+#data.plot()
+#plt.savefig("C:\Python_study\株価から変曲点/2nd-figure.jpg") #ok!グラフ自体はちゃんと描画できている
+
