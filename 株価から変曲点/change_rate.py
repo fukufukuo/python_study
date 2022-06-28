@@ -6,10 +6,23 @@
 import pandas as pd
 
 # csv読み込み
-df = pd.read_csv("C:\Python_study\株価から変曲点\shokki_stock_data_renamed.csv")
+csv_path = "C:\Python_study\株価から変曲点\shokki_stock_data_renamed.csv"
+df = pd.read_csv(csv_path)
 
-# 空の列を追加
-df['change_rate'] = df['start_value']*0
-
-# 確認
+# いったん確認
 print(df.head())
+
+# 差分計算列を追加
+# diff()で、一行前の値との差分を計算できる
+df['high_sabun'] = df['high_value'].diff()
+
+# 列が追加されているか確認
+print(df.head())
+
+# 変化率計算列を追加
+# pct_change()で、一行前の値に対しての変化率を計算できる
+df['high_change_rate'] = df['high_value'].pct_change()
+
+# 列が追加されているか確認
+print(df.head())
+
