@@ -21,7 +21,7 @@ def print_passage(func): # 関数を引数に受け取る関数内関数 #ここ
     result = func(*args, *kwargs)
     print('計算が終了しました。結果を表示します。')
     return result
-  return passage
+  return passage # passage()を定義しないと、print部分が出力されない。passage()の定義部分で定義したことを丸っと出力したいから、passage()を定義している
 
 @print_passage #デコレートしたい関数の上に@でデコレート関数名を書くだけでいい
 def add_calc(a,b):
